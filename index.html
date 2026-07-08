@@ -160,9 +160,9 @@
   .hero-stage .browser-frame{transform:rotate(-1deg);}
   .hero-phone{position:absolute; right:-6%; bottom:-11%; width:38%; max-width:190px; background:#05070d; border-radius:22px; padding:8px; box-shadow:0 30px 60px -18px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.08); transform:rotate(3deg);}
   .hero-phone img{border-radius:15px;}
-  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero-stage{order:-1; margin-bottom:20px; padding-bottom:0; min-width:0;} .hero-phone{position:relative; right:auto; bottom:auto; width:min(220px,72vw); margin:20px auto 0; transform:none;}}
-  @media (max-width:640px){.hero{padding:72px 0 48px;} .hero p.lede{font-size:1rem; line-height:1.55; max-width:100%; margin-bottom:24px;} .hero-phone{width:min(190px,84vw);} .browser-frame img.shot{aspect-ratio:auto;}}
-  @media (max-width:480px){.hero-grid{gap:30px;} .hero-ctas{flex-direction:column; align-items:stretch;} .hero-ctas .btn{width:100%; justify-content:center;} .hero-trust{gap:12px 16px;} .hero-trust span{font-size:.8rem;} .pwa-phones{gap:10px; align-items:center;} .phone-shell{width:calc(50% - 5px); max-width:180px; padding:6px; border-radius:20px;} .pwa-phones .phone-shell:nth-child(2){width:calc(50% - 5px); max-width:180px; transform:none; opacity:1;}}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero-stage{order:-1; margin-bottom:20px; padding-bottom:0; min-width:0; display:flex; align-items:center; justify-content:center; gap:12px;} .hero-stage .browser-frame{transform:none; flex:1 1 auto; max-width:100%;} .hero-phone{position:relative; right:auto; bottom:auto; width:min(180px, 30vw); margin:0; transform:none; flex:0 0 auto;}}
+  @media (max-width:640px){.hero{padding:72px 0 48px;} .hero p.lede{font-size:1rem; line-height:1.55; max-width:100%; margin-bottom:24px;} .hero-stage{gap:8px; align-items:flex-end;} .hero-phone{width:min(140px, 34vw);} .browser-frame img.shot{aspect-ratio:auto;}}
+  @media (max-width:480px){.hero-grid{gap:30px;} .hero-ctas{flex-direction:column; align-items:stretch;} .hero-ctas .btn{width:100%; justify-content:center;} .hero-trust{gap:12px 16px;} .hero-trust span{font-size:.8rem;} .hero-stage{gap:6px;} .hero-phone{width:110px;}}
 
   section{padding:92px 0;}
   .section-head{max-width:640px; margin:0 0 52px;}
