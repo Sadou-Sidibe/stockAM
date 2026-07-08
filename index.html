@@ -92,10 +92,10 @@
   .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
   .browser-frame img.shot,
   .hero-phone img,
-  .phone-shell img{width:100%; height:auto; object-fit:cover;}
-  .browser-frame img.shot{aspect-ratio:1400 / 669;}
+  .phone-shell img{width:100%; height:auto; object-fit:contain;}
+  .browser-frame img.shot{aspect-ratio:auto;}
   .hero-phone img,
-  .phone-shell img{aspect-ratio:480 / 1000;}
+  .phone-shell img{aspect-ratio:auto;}
 
   @media (prefers-reduced-motion: reduce){*{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}}
 
@@ -161,7 +161,8 @@
   .hero-phone{position:absolute; right:-6%; bottom:-11%; width:38%; max-width:190px; background:#05070d; border-radius:22px; padding:8px; box-shadow:0 30px 60px -18px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.08); transform:rotate(3deg);}
   .hero-phone img{border-radius:15px;}
   @media (max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero-stage{order:-1; margin-bottom:20px; padding-bottom:0; min-width:0;} .hero-phone{position:relative; right:auto; bottom:auto; width:min(220px,72vw); margin:20px auto 0; transform:none;}}
-  @media (max-width:640px){.hero{padding:72px 0 48px;} .hero-phone{width:min(190px,84vw);} .browser-frame img.shot{aspect-ratio:4 / 3;}}
+  @media (max-width:640px){.hero{padding:72px 0 48px;} .hero p.lede{font-size:1rem; line-height:1.55; max-width:100%; margin-bottom:24px;} .hero-phone{width:min(190px,84vw);} .browser-frame img.shot{aspect-ratio:auto;}}
+  @media (max-width:480px){.hero-grid{gap:30px;} .hero-ctas{flex-direction:column; align-items:stretch;} .hero-ctas .btn{width:100%; justify-content:center;} .hero-trust{gap:12px 16px;} .hero-trust span{font-size:.8rem;} .pwa-phones{gap:10px; align-items:center;} .phone-shell{width:calc(50% - 5px); max-width:180px; padding:6px; border-radius:20px;} .pwa-phones .phone-shell:nth-child(2){width:calc(50% - 5px); max-width:180px; transform:none; opacity:1;}}
 
   section{padding:92px 0;}
   .section-head{max-width:640px; margin:0 0 52px;}
@@ -319,7 +320,7 @@
     <div>
       <div class="eyebrow"><span class="pip"></span> Application web installable — sans matériel de caisse</div>
       <h1>La caisse et le stock<br>de votre commerce,<br><em>sous contrôle.</em></h1>
-      <p class="lede">STOCKAM enregistre chaque vente, suit vos stocks en temps réel et tient votre comptabilité à votre place. Sur téléphone comme sur ordinateur, même en Afrique de l'Ouest où la connexion n'est pas toujours stable.</p>
+      <p class="lede">STOCKAM gère les ventes, le stock et la caisse en un seul outil, même avec une connexion instable.</p>
       <div class="hero-ctas">
         <a href="https://stockam.app/" target="_blank" rel="noopener" class="btn btn-primary">Démarrer les 14 jours gratuits</a>
         <a href="#pwa" class="btn btn-ghost">Comment ça marche</a>
@@ -614,7 +615,7 @@
     <div class="reveal">
       <div class="eyebrow"><span class="pip"></span> Progressive Web App</div>
       <h2 style="font-size:clamp(1.65rem,3vw,2.2rem); letter-spacing:-0.015em; margin:0 0 10px;">Une vraie application, sans passer par un store.</h2>
-      <p style="color:var(--slate); font-size:1.02rem; line-height:1.6; max-width:460px; margin:0;">STOCKAM s'installe directement depuis votre navigateur, garde une icône sur votre écran d'accueil et fonctionne même quand la connexion coupe un instant.</p>
+      <p style="color:var(--slate); font-size:1.02rem; line-height:1.6; max-width:460px; margin:0;">STOCKAM s'installe depuis votre navigateur et reste pratique même quand la connexion coupe un instant.</p>
       <ul class="pwa-steps">
         <li><span class="num">1</span><div><h4>Ouvrez STOCKAM dans votre navigateur</h4><p>Sur Chrome (Android) ou Safari (iPhone), depuis votre téléphone ou votre ordinateur.</p></div></li>
         <li><span class="num">2</span><div><h4>Ajoutez à l'écran d'accueil</h4><p>Une seule pression, et l'icône STOCKAM apparaît à côté de vos autres applications.</p></div></li>
