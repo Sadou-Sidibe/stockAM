@@ -72,7 +72,6 @@
     {"@type": "Question","name": "STOCKAM fonctionne-t-il sans internet en permanence ?","acceptedAnswer": {"@type": "Answer","text": "STOCKAM est pensé pour les réseaux instables d'Afrique de l'Ouest. Vos dernières données restent consultables hors connexion, et tout se resynchronise automatiquement dès que le réseau revient."}},
     {"@type": "Question","name": "Je ne suis pas à l'aise avec la technologie, est-ce compliqué ?","acceptedAnswer": {"@type": "Answer","text": "Non. L'interface a été conçue pour des commerçants sans formation informatique, avec peu d'étapes et un vocabulaire simple pour enregistrer une vente en quelques secondes."}},
     {"@type": "Question","name": "Le module comptable remplace-t-il un vrai comptable ?","acceptedAnswer": {"@type": "Answer","text": "Il tient votre livre journal au jour le jour et l'exporte en PDF, ce qui facilite le travail avec un comptable, sans le remplacer sur les questions fiscales et juridiques."}},
-    {"@type": "Question","name": "Puis-je changer de plan, arrêter, et mes données sont-elles en sécurité ?","acceptedAnswer": {"@type": "Answer","text": "Oui, à tout moment depuis votre profil, sans engagement. Chaque commerce dispose de son propre espace sécurisé, strictement séparé de celui des autres utilisateurs de STOCKAM."}}
   ]
 }
 </script>
@@ -89,8 +88,14 @@
   h1,h2,h3,.font-display{font-family:'Space Grotesk', sans-serif;}
   .mono{font-family:'IBM Plex Mono', monospace;}
   a{color:inherit;}
-  img{max-width:100%; display:block; height:auto;}
+  img{max-width:100%; display:block; height:auto; object-fit:contain;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  .browser-frame img.shot,
+  .hero-phone img,
+  .phone-shell img{width:100%; height:auto; object-fit:cover;}
+  .browser-frame img.shot{aspect-ratio:1400 / 669;}
+  .hero-phone img,
+  .phone-shell img{aspect-ratio:480 / 1000;}
 
   @media (prefers-reduced-motion: reduce){*{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}}
 
@@ -111,8 +116,11 @@
   .nav-toggle{display:none; background:none; border:none; color:var(--white); font-size:1.6rem; cursor:pointer;}
 
   @media (max-width:860px){
-    .nav-links{position:fixed; inset:64px 0 0 0; background:var(--ink); flex-direction:column; padding:32px 28px; gap:22px; font-size:1.05rem; transform:translateY(-8px); opacity:0; pointer-events:none; transition:all .2s ease;}
+    .nav-links{position:fixed; inset:64px 0 0 0; background:linear-gradient(180deg, rgba(11,17,32,0.98), rgba(11,17,32,0.94)); flex-direction:column; padding:32px 28px; gap:14px; font-size:1.05rem; transform:translateY(-8px); opacity:0; pointer-events:none; transition:all .2s ease; border-top:1px solid rgba(255,255,255,0.08);}
     .nav-links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+    .nav-links a{display:block; color:var(--white); padding:10px 12px; border-radius:10px; font-weight:600; letter-spacing:0.01em; transition:color .2s ease, background .2s ease, transform .2s ease;}
+    .nav-links a:hover,
+    .nav-links a:focus-visible{color:var(--orange); background:rgba(249,115,22,0.12); transform:translateX(2px);}
     .nav-cta .btn-ghost{display:none;}
     .nav-toggle{display:block;}
   }
@@ -152,7 +160,8 @@
   .hero-stage .browser-frame{transform:rotate(-1deg);}
   .hero-phone{position:absolute; right:-6%; bottom:-11%; width:38%; max-width:190px; background:#05070d; border-radius:22px; padding:8px; box-shadow:0 30px 60px -18px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.08); transform:rotate(3deg);}
   .hero-phone img{border-radius:15px;}
-  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero-stage{order:-1; margin-bottom:20px; padding-bottom:14%;}}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero-stage{order:-1; margin-bottom:20px; padding-bottom:0; min-width:0;} .hero-phone{position:relative; right:auto; bottom:auto; width:min(220px,72vw); margin:20px auto 0; transform:none;}}
+  @media (max-width:640px){.hero{padding:72px 0 48px;} .hero-phone{width:min(190px,84vw);} .browser-frame img.shot{aspect-ratio:4 / 3;}}
 
   section{padding:92px 0;}
   .section-head{max-width:640px; margin:0 0 52px;}
